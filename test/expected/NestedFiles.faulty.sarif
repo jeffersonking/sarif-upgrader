@@ -1,0 +1,161 @@
+{
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "CodeScanner",
+          "semanticVersion": "2.1.0",
+          "rules": [
+            {
+              "messageStrings": {
+                "a": {
+                  "text": "Review all plaintext content for geopolitically sensitive terms."
+                }
+              },
+              "id": "C1"
+            }
+          ]
+        }
+      },
+      "originalUriBaseIds": {
+        "SUB": {
+          "uri": "submodule/",
+          "uriBaseId": "ROOT"
+        },
+        "ROOT": {
+          "uri": "file:///c:/"
+        }
+      },
+      "results": [
+        {
+          "ruleId": "C1",
+          "message": {
+            "id": "a"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file.txt",
+                  "index": 3
+                }
+              },
+              "properties": {
+                "key": "file.txt"
+              }
+            }
+          ],
+          "ruleIndex": 0
+        },
+        {
+          "ruleId": "C1",
+          "message": {
+            "id": "a"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file.txt",
+                  "uriBaseId": "SUB",
+                  "properties": {
+                    "key": "#SUB#file.txt"
+                  },
+                  "index": 2
+                }
+              }
+            }
+          ],
+          "ruleIndex": 0
+        },
+        {
+          "ruleId": "C1",
+          "message": {
+            "id": "a"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/file.txt",
+                  "properties": {
+                    "key": "file://c:/archive_one.zip#/file.txt"
+                  },
+                  "index": 0
+                }
+              }
+            }
+          ],
+          "ruleIndex": 0
+        },
+        {
+          "ruleId": "C1",
+          "message": {
+            "id": "a"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "/archive_two.zip/file.txt",
+                  "properties": {
+                    "key": "file://c:/archive_one.zip#/archive_two.zip/file.txt"
+                  },
+                  "index": 4
+                }
+              }
+            }
+          ],
+          "ruleIndex": 0
+        }
+      ],
+      "artifacts": [
+        {
+          "mimeType": "text/plain",
+          "parentIndex": 1,
+          "location": {
+            "uri": "/file.txt"
+          }
+        },
+        {
+          "mimeType": "application/zip",
+          "location": {
+            "uri": "file:///c:/archive_one.zip"
+          }
+        },
+        {
+          "mimeType": "text/plain",
+          "location": {
+            "uri": "file.txt",
+            "uriBaseId": "SUB",
+            "index": 2
+          }
+        },
+        {
+          "mimeType": "text/plain",
+          "location": {
+            "uri": "file.txt",
+            "index": 3
+          }
+        },
+        {
+          "mimeType": "text/plain",
+          "parentIndex": 5,
+          "location": {
+            "uri": "/file.txt"
+          }
+        },
+        {
+          "mimeType": "application/zip",
+          "parentIndex": 1,
+          "location": {
+            "uri": "/archive_two.zip"
+          }
+        }
+      ],
+      "columnKind": "utf16CodeUnits"
+    }
+  ]
+}

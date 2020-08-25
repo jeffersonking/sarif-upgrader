@@ -1,0 +1,17 @@
+{
+	"name": "sarif-upgrader",
+	"version": "0.0.0",
+	"scripts": {
+		"test": "jest --watchAll"
+	},
+	"dependencies": {
+		"yaml": "1.10.0"
+	},
+	"devDependencies": {
+		"@types/json-schema": "7.0",
+		"@types/node": "14.0",
+		"jest": "26.4",
+		"ts-jest": "26.2",
+		"typescript": "4.0"
+	}
+}

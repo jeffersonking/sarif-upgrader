@@ -1,0 +1,153 @@
+# Manually derived from 2.0.0-csd.2.beta.2019-01-24
+---
+log:
+  runs: run[]
+artifact:
+  location: artifactLocation
+  contents: artifactContent
+artifactChange:
+  artifactLocation: artifactLocation
+  replacements: replacement[]
+artifactContent:
+artifactLocation:
+attachment:
+  description: message
+  artifactLocation: artifactLocation
+  regions: region[]
+  rectangles: rectangle[]
+codeFlow:
+  message: message
+  threadFlows: threadFlow[]
+conversion:
+  tool: tool
+  invocation: invocation
+  analysisToolLogFiles: artifactLocation[]
+edge:
+  label: message
+edgeTraversal:
+  message: message
+exception:
+  # message: message # Deleted (became string)
+  stack: stack
+  innerExceptions: exception[]
+externalPropertyFile:
+  artifactLocation: artifactLocation
+externalPropertyFiles:
+  conversion: externalPropertyFile
+  graphs: externalPropertyFile
+  externalizedProperties: externalPropertyFile
+  artifacts: externalPropertyFile[]
+  invocations: externalPropertyFile[]
+  logicalLocations: externalPropertyFile[]
+  results: externalPropertyFile[]
+  tool: externalPropertyFile
+fix:
+  description: message
+  changes: artifactChange[]
+graph:
+  description: message
+  nodes: node[]
+  edges: edge[]
+graphTraversal:
+  description: message
+  edgeTraversals: edgeTraversal[]
+invocation:
+  responseFiles: artifactLocation[]
+  attachments: attachment[]
+  reportingConfigurationOverrides: reportingConfigurationOverride[]
+  toolExecutionNotifications: notification[] # Was toolNotifications.
+  toolConfigurationNotifications: notification[] # Was configurationNotifications.
+  executableLocation: artifactLocation
+  workingDirectory: artifactLocation
+  stdin: artifactLocation
+  stdout: artifactLocation
+  stderr: artifactLocation
+  stdoutStderr: artifactLocation
+location:
+  physicalLocation: physicalLocation
+  message: message
+  annotations: region[]
+logicalLocation:
+message:
+multiformatMessageString:
+node:
+  label: message
+  location: location
+  children: node[]
+notification:
+  physicalLocation: physicalLocation
+  message: message
+  exception: exception
+physicalLocation:
+  artifactLocation: artifactLocation
+  region: region
+  contextRegion: region
+propertyBag:
+rectangle:
+  message: message
+region:
+  snippet: artifactContent
+  message: message
+replacement:
+  deletedRegion: region
+  insertedContent: artifactContent
+reportingDescriptor:
+  # name: message # Deleted (became string)
+  shortDescription: message
+  fullDescription: message
+  messageStrings: multiformatMessageString{}
+  defaultConfiguration: reportingConfiguration
+  help: message
+reportingConfiguration:
+  parameters: propertyBag
+reportingConfigurationOverride:
+  configuration: reportingConfiguration
+result:
+  message: message
+  analysisTarget: artifactLocation
+  locations: location[]
+  stacks: stack[]
+  codeFlows: codeFlow[]
+  graphs: graph{}
+  graphTraversals: graphTraversal[]
+  relatedLocations: location[]
+  attachments: attachment[]
+  provenance: resultProvenance
+  fixes: fix[]
+resultProvenance:
+  conversionSources: physicalLocation[]
+run:
+  tool: tool
+  invocations: invocation[]
+  conversion: conversion
+  versionControlProvenance: versionControlDetails[]
+  originalUriBaseIds: artifactLocation{}
+  artifacts: artifact[]
+  logicalLocations: logicalLocation[]
+  graphs: graph{}
+  results: result[]
+  id: runAutomationDetails
+  aggregateIds: runAutomationDetails[]
+  externalPropertyFiles: externalPropertyFiles
+runAutomationDetails:
+  description: message
+stack:
+  message: message
+  frames: stackFrame[]
+stackFrame:
+  location: location
+threadFlow:
+  message: message
+  locations: threadFlowLocation[]
+threadFlowLocation:
+  location: location
+  stack: stack
+tool:
+  driver: toolComponent
+  extensions: toolComponent[]
+toolComponent:
+  globalMessageStrings: multiformatMessageString{}
+  notificationDescriptors: reportingDescriptor[]
+  ruleDescriptors: reportingDescriptor[]
+versionControlDetails:
+  mappedTo: artifactLocation

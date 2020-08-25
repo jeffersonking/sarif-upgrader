@@ -1,0 +1,139 @@
+# Manually derived from 2.0.0
+---
+log:
+  runs: run[]
+attachment:
+  description: message
+  fileLocation: fileLocation
+  regions: region[]
+  rectangles: rectangle[]
+codeFlow:
+  message: message
+  threadFlows: threadFlow[]
+conversion:
+  tool: tool
+  invocation: invocation
+  analysisToolLogFiles: fileLocation[]
+edge:
+  label: message
+edgeTraversal:
+  message: message
+exception:
+  message: message #Added
+  stack: stack
+  innerExceptions: exception[]
+externalFiles:
+  conversion: fileLocation
+  files: fileLocation
+  graphs: fileLocation
+  invocations: fileLocation[]
+  logicalLocations: fileLocation
+  resources: fileLocation
+  results: fileLocation[]
+file:
+  fileLocation: fileLocation
+  contents: fileContent
+  # hashes: hash[] # Deleted (became plain {})
+fileChange:
+  fileLocation: fileLocation
+  replacements: replacement[]
+fileContent:
+fileLocation:
+fix:
+  description: message
+  fileChanges: fileChange[]
+graph:
+  description: message
+  nodes: node[]
+  edges: edge[]
+graphTraversal:
+  description: message
+  edgeTraversals: edgeTraversal[]
+hash:
+invocation:
+  responseFiles: fileLocation[]
+  attachments: attachment[]
+  toolNotifications: notification[]
+  configurationNotifications: notification[]
+  executableLocation: fileLocation
+  workingDirectory: fileLocation # Existed (unexpectedly)
+  stdin: fileLocation
+  stdout: fileLocation
+  stderr: fileLocation
+  stdoutStderr: fileLocation
+location:
+  physicalLocation: physicalLocation
+  message: message
+  annotations: region[]
+logicalLocation:
+message:
+node:
+  label: message
+  location: location
+  children: node[]
+notification:
+  physicalLocation: physicalLocation
+  message: message
+  exception: exception
+physicalLocation:
+  fileLocation: fileLocation
+  region: region
+  contextRegion: region
+rectangle:
+  message: message
+region:
+  snippet: fileContent
+  message: message
+replacement:
+  deletedRegion: region
+  insertedContent: fileContent
+resources:
+  rules: rule{}
+result:
+  message: message
+  analysisTarget: fileLocation
+  locations: location[]
+  stacks: stack[]
+  codeFlows: codeFlow[]
+  graphs: graph[]
+  graphTraversals: graphTraversal[]
+  relatedLocations: location[]
+  attachments: attachment[]
+  conversionProvenance: physicalLocation[]
+  fixes: fix[]
+rule:
+  name: message
+  shortDescription: message
+  fullDescription: message
+  configuration: ruleConfiguration
+  help: message
+ruleConfiguration:
+run:
+  tool: tool
+  invocations: invocation[]
+  conversion: conversion
+  versionControlProvenance: versionControlDetails[]
+  originalUriBaseIds: fileLocation{} # Added
+  files: file{}
+  logicalLocations: logicalLocation{}
+  graphs: graph[]
+  results: result[]
+  id: runAutomationDetails # Added
+  aggregateIds: runAutomationDetails[] # Added
+  resources: resources
+  description: message
+runAutomationDetails: #Added
+  description: message
+stack:
+  message: message
+  frames: stackFrame[]
+stackFrame:
+  location: location
+threadFlow:
+  message: message
+  locations: threadFlowLocation[]
+threadFlowLocation:
+  location: location
+  stack: stack
+tool:
+versionControlDetails:

@@ -1,0 +1,236 @@
+
+---
+log:
+  runs: run[]
+  inlineExternalProperties: externalProperties[]
+address:
+artifact:
+  description: message
+  location: artifactLocation
+  contents: artifactContent
+artifactChange:
+  artifactLocation: artifactLocation
+  replacements: replacement[]
+artifactContent:
+  rendered: multiformatMessageString
+artifactLocation:
+  description: message
+attachment:
+  description: message
+  artifactLocation: artifactLocation
+  regions: region[]
+  rectangles: rectangle[]
+codeFlow:
+  message: message
+  threadFlows: threadFlow[]
+configurationOverride:
+  configuration: reportingConfiguration
+  descriptor: reportingDescriptorReference
+conversion:
+  tool: tool
+  invocation: invocation
+  analysisToolLogFiles: artifactLocation[]
+edge:
+  label: message
+edgeTraversal:
+  message: message
+  finalState: multiformatMessageString{}
+exception:
+  stack: stack
+  innerExceptions: exception[]
+externalProperties:
+  conversion: conversion
+  graphs: graph[]
+  externalizedProperties: propertyBag
+  artifacts: artifact[]
+  invocations: invocation[]
+  logicalLocations: logicalLocation[]
+  threadFlowLocations: threadFlowLocation[]
+  results: result[]
+  taxonomies: toolComponent[]
+  driver: toolComponent
+  extensions: toolComponent[]
+  policies: toolComponent[]
+  translations: toolComponent[]
+  addresses: address[]
+  webRequests: webRequest[]
+  webResponses: webResponse[]
+externalPropertyFileReference:
+  location: artifactLocation
+externalPropertyFileReferences:
+  conversion: externalPropertyFileReference
+  graphs: externalPropertyFileReference[]
+  externalizedProperties: externalPropertyFileReference
+  artifacts: externalPropertyFileReference[]
+  invocations: externalPropertyFileReference[]
+  logicalLocations: externalPropertyFileReference[]
+  threadFlowLocations: externalPropertyFileReference[]
+  results: externalPropertyFileReference[]
+  taxonomies: externalPropertyFileReference[]
+  addresses: externalPropertyFileReference[]
+  driver: externalPropertyFileReference
+  extensions: externalPropertyFileReference[]
+  policies: externalPropertyFileReference[]
+  translations: externalPropertyFileReference[]
+  webRequests: externalPropertyFileReference[]
+  webResponses: externalPropertyFileReference[]
+fix:
+  description: message
+  artifactChanges: artifactChange[]
+graph:
+  description: message
+  nodes: node[]
+  edges: edge[]
+graphTraversal:
+  description: message
+  initialState: multiformatMessageString{}
+  immutableState: multiformatMessageString{}
+  edgeTraversals: edgeTraversal[]
+invocation:
+  responseFiles: artifactLocation[]
+  ruleConfigurationOverrides: configurationOverride[]
+  notificationConfigurationOverrides: configurationOverride[]
+  toolExecutionNotifications: notification[]
+  toolConfigurationNotifications: notification[]
+  executableLocation: artifactLocation
+  workingDirectory: artifactLocation
+  stdin: artifactLocation
+  stdout: artifactLocation
+  stderr: artifactLocation
+  stdoutStderr: artifactLocation
+location:
+  physicalLocation: physicalLocation
+  logicalLocations: logicalLocation[]
+  message: message
+  annotations: region[]
+  relationships: locationRelationship[]
+locationRelationship:
+  description: message
+logicalLocation:
+message:
+multiformatMessageString:
+node:
+  label: message
+  location: location
+  children: node[]
+notification:
+  locations: location[]
+  message: message
+  exception: exception
+  descriptor: reportingDescriptorReference
+  associatedRule: reportingDescriptorReference
+physicalLocation:
+  address: address
+  artifactLocation: artifactLocation
+  region: region
+  contextRegion: region
+propertyBag:
+rectangle:
+  message: message
+region:
+  snippet: artifactContent
+  message: message
+replacement:
+  deletedRegion: region
+  insertedContent: artifactContent
+reportingDescriptor:
+  shortDescription: multiformatMessageString
+  fullDescription: multiformatMessageString
+  messageStrings: multiformatMessageString{}
+  defaultConfiguration: reportingConfiguration
+  help: multiformatMessageString
+  relationships: reportingDescriptorRelationship[]
+reportingConfiguration:
+  parameters: propertyBag
+reportingDescriptorReference:
+  toolComponent: toolComponentReference
+reportingDescriptorRelationship:
+  target: reportingDescriptorReference
+  description: message
+result:
+  rule: reportingDescriptorReference
+  message: message
+  analysisTarget: artifactLocation
+  locations: location[]
+  stacks: stack[]
+  codeFlows: codeFlow[]
+  graphs: graph[]
+  graphTraversals: graphTraversal[]
+  relatedLocations: location[]
+  suppressions: suppression[]
+  attachments: attachment[]
+  provenance: resultProvenance
+  fixes: fix[]
+  taxa: reportingDescriptorReference[]
+  webRequest: webRequest
+  webResponse: webResponse
+resultProvenance:
+  conversionSources: physicalLocation[]
+run:
+  tool: tool
+  invocations: invocation[]
+  conversion: conversion
+  versionControlProvenance: versionControlDetails[]
+  originalUriBaseIds: artifactLocation{}
+  artifacts: artifact[]
+  logicalLocations: logicalLocation[]
+  graphs: graph[]
+  results: result[]
+  automationDetails: runAutomationDetails
+  runAggregates: runAutomationDetails[]
+  externalPropertyFileReferences: externalPropertyFileReferences
+  threadFlowLocations: threadFlowLocation[]
+  taxonomies: toolComponent[]
+  addresses: address[]
+  translations: toolComponent[]
+  policies: toolComponent[]
+  webRequests: webRequest[]
+  webResponses: webResponse[]
+  specialLocations: specialLocations
+runAutomationDetails:
+  description: message
+specialLocations:
+  displayBase: artifactLocation
+stack:
+  message: message
+  frames: stackFrame[]
+stackFrame:
+  location: location
+suppression:
+  location: location
+threadFlow:
+  message: message
+  initialState: multiformatMessageString{}
+  immutableState: multiformatMessageString{}
+  locations: threadFlowLocation[]
+threadFlowLocation:
+  location: location
+  stack: stack
+  taxa: reportingDescriptorReference[]
+  state: multiformatMessageString{}
+  webRequest: webRequest
+  webResponse: webResponse
+tool:
+  driver: toolComponent
+  extensions: toolComponent[]
+toolComponent:
+  shortDescription: multiformatMessageString
+  fullDescription: multiformatMessageString
+  globalMessageStrings: multiformatMessageString{}
+  notifications: reportingDescriptor[]
+  rules: reportingDescriptor[]
+  taxa: reportingDescriptor[]
+  locations: artifactLocation[]
+  associatedComponent: toolComponentReference
+  translationMetadata: translationMetadata
+  supportedTaxonomies: toolComponentReference[]
+toolComponentReference:
+translationMetadata:
+  shortDescription: multiformatMessageString
+  fullDescription: multiformatMessageString
+versionControlDetails:
+  mappedTo: artifactLocation
+webRequest:
+  body: artifactContent
+webResponse:
+  body: artifactContent

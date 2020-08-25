@@ -1,0 +1,56 @@
+
+---
+log:
+  runs: run[]
+annotatedCodeLocation:
+  id: integer,string
+  physicalLocation: physicalLocation
+  annotations: annotation[]
+annotation:
+  locations: physicalLocation[]
+codeFlow:
+  locations: annotatedCodeLocation[]
+exception:
+  stack: stack
+  innerExceptions: exception[]
+fileChange:
+  replacements: replacement[]
+file:
+  hashes: hash[]
+fix:
+  fileChanges: fileChange[]
+formattedRuleMessage:
+hash:
+invocation:
+location:
+  analysisTarget: physicalLocation
+  resultFile: physicalLocation
+logicalLocation:
+notification:
+  physicalLocation: physicalLocation
+  exception: exception
+physicalLocation:
+  region: region
+region:
+replacement:
+result:
+  formattedRuleMessage: formattedRuleMessage
+  locations: location[]
+  stacks: stack[]
+  codeFlows: codeFlow[]
+  relatedLocations: annotatedCodeLocation[]
+  fixes: fix[]
+rule:
+run:
+  tool: tool
+  invocation: invocation
+  files: file{}
+  logicalLocations: logicalLocation{}
+  results: result[]
+  toolNotifications: notification[]
+  configurationNotifications: notification[]
+  rules: rule{}
+stack:
+  frames: stackFrame[]
+stackFrame:
+tool:
